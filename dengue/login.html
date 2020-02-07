@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap-4.4.1/dist/css/bootstrap.min.css">
+    <link href="bootstrap/fontawesome/css/fontawesome.min.css" rel="stylesheet"/>
+    <style>
+      .wrapper{
+        text-align: center;
+      }
+      .user_input {
+        position: relative;
+      }
+      .user_input .inputText{
+        width: 100%;
+        outline: none;
+        border:none;
+        border-bottom: 1px solid #777;
+        box-shadow: none !important;
+      }
+      .user_input .inputText:focus{
+        border-color: blue;
+        border-width: medium medium 2px;
+      }
+      .user_input .floating-label {
+        position: absolute;
+        pointer-events: none;
+        top: 18px;
+        left: 10px;
+        transition: 0.2s ease all;
+      }
+      .user_input input:focus ~ .floating-label,
+      .user_input input:not(:focus):valid ~ .floating-label{
+        top: 0px;
+        left: 10px;
+        font-size: 13px;
+        opacity: 1;
+      }
+      .login_form{
+        padding: 50px;
+
+      }
+      .login_header{
+        text-align: center;
+        padding-top: 150px;
+      }
+      .form_btn{
+        background-color: #0094ff;
+        border-radius: 20px;
+        color: #ffffff;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+          <h5 class="login_header">Dengue Surveillance System</h5>
+          <form class="form-horizontal login_form" method="post" enctype="multipart/form-data" action="javascript:login(); ">
+              <div class="user_input">
+                <br/>
+                <input type="text" class="inputText" required/>
+                <span class="floating-label">username</span>
+              </div>
+              <div class="user_input">
+                <br/>
+                <input type="text" class="inputText" required/>
+                <span class="floating-label">password</span>
+              </div>
+
+              <button type="submit" class="btn form_btn">LOGIN</button>
+              
+          </form>
+      </div>
+    </div>
+     <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

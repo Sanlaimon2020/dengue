@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap-4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-datepicker-1.9.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" type="text/css" href="include/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <!--NavBar-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h6>Dengue Surveillance System</h6>
+            <div style="float:right;">
+                <a href="javascript:login()" class="btn btn-flat btn_login">LOGIN</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#top">Link1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#top">Link2</a>
+                    </li>
+                </ul>
+            </div>
+        </nav><!-- NavBar END -->
+
+        <div class="photo_container box" id="main">
+            <div class="modal-header">
+                <h5 class="box-title table_header">Dengue Surveillance System</h5>
+            </div>
+
+
+            <form class="form-horizontal" method="post" enctype="multipart/form-data" action="javascript:save(); ">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label><h6>စာရင်းရရှိသည့် ရက်စွဲ</h6></label>
+                        <input type="text" class="form-control datepicker" id="" autocomplete="off" value="today();" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>လူနာအမည်</h6></label>
+                        <input type="text" placeholder="လူနာအမည်*" id="" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>အသက်</h6></label>
+                        <input type="text" placeholder="အသက်*" id="" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>ကျား/မ</h6></label><br>
+                        <input type="radio" name="gender" id="male" value="male"> ကျား
+                        <input type="radio" name="gender" id="female" value="female"> မ
+                    </div>
+                    <div class="form-group">
+                        <label><h6>မိဘအမည်</h6></label>
+                        <input type="text" placeholder="မိဘအမည်*" id="" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>အမြဲတမ်းနေရပ်လိပ်စာအပြည့်အစုံ</h6></label>
+                        <input type="text" placeholder="အမြဲတမ်းနေရပ်လိပ်စာအပြည့်အစုံ*" id="" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>ဆက်သွယ်ရန်ဖုန်းနံပါတ်</h6></label>
+                        <input type="text" placeholder="ဆက်သွယ်ရန်ဖုန်းနံပါတ်*" id="" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>ဆေးရုံတက်ရက်</h6></label>
+                        <input type="text" placeholder="ဆေးရုံတက်ရက်*" id="" class="form-control datepicker" autocomplete="off" value="today();" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>ဆေးရုံတက် Grading</h6></label><br>
+                        <input type="radio" name="grading" id="df" value="df"> DF
+                        <input type="radio" name="grading" id="dhf" value="dhf"> DHF
+                        <input type="radio" name="grading" id="eds" value="eds"> EDS
+                    </div>
+                    <div class="form-group">
+                        <label><h6>ဆေးရုံဆင်းရက်</h6></label>
+                        <input type="text" placeholder="ဆေးရုံဆင်းရက်*" id="" class="form-control datepicker" autocomplete="off" value="today();" />
+                        <input type="radio" name="sign" id="death" value="death"> Death
+                        <input type="radio" name="sign" id="sign_and_gone" value="sign_and_gone"> Sign and gone
+                    </div>
+                    <div class="form-group">
+                        <label><h6>ဆေးရုံဆင်း Grading</h6></label><br>
+                        <input type="radio" name="grading" id="df" value="df"> DF
+                        <input type="radio" name="grading" id="dhf" value="dhf"> DHF
+                        <input type="radio" name="grading" id="eds" value="eds"> EDS
+                    </div>
+                    <div class="form-group">
+                        <label><h6>တက်သည့်ဆေးရုံ</h6></label>
+                        <input type="text" placeholder="တက်သည့်ဆေးရုံ*" id="" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>မှတ်ချက်</h6></label>
+                        <input type="text" placeholder="မှတ်ချက်*" id="" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label><h6>Laboratory</h6></label><br>
+                        <input type="radio" checked name="laboratory" id="laboratory_no" value="0"> No
+                        <input type="radio" name="laboratory" data-toggle="collapse" data-target="#laboratory_collapse" id="laboratory_yes" value="1"> Yes
+                        <div id="laboratory_collapse" class="collapse in">
+                            <div class="form-group">
+                                <label><h6>NS1 Ag</h6></label><br>
+                                <input type="radio" name="ns1_ag" id="post_plus" value="post_plus"> Post+
+                                <input type="radio" name="ns1_ag" id="neg_minus" value="neg_minus"> Neg-
+                                <input type="radio" name="ns1_ag" id="n_a" value="n_a"> N/A
+                            </div>
+                            <div class="form-group">
+                                <label><h6>IgM Ab</h6></label><br>
+                                <input type="radio" name="igm_ab" id="post_plus" value="post_plus"> Post+
+                                <input type="radio" name="igm_ab" id="neg_minus" value="neg_minus"> Neg-
+                                <input type="radio" name="igm_ab" id="n_a" value="n_a"> N/A 
+                            </div>
+                            <div class="form-group">
+                                <label><h6>IgG Ab</h6></label><br>
+                                <input type="radio" name="igg_ab" id="post_plus" value="post_plus"> Post+
+                                <input type="radio" name="igg_ab" id="neg_minus" value="neg_minus"> Neg-
+                                <input type="radio" name="igg_ab" id="n_a" value="n_a"> N/A
+                            </div>
+                            <div class="form-group">
+                                <label><h6>Platelet</h6></label><br>
+                                <input type="radio" name="platelet" id="post_plus" value="post_plus"> Post+
+                                <input type="radio" name="platelet" id="neg_minus" value="neg_minus"> Neg-
+                                <input type="radio" name="platelet" id="n_a" value="n_a"> N/A
+                            </div>
+                            <div class="form-group">
+                                <label><h6>PCV</h6></label><br>
+                                <input type="radio" name="pcv" id="post_plus" value="post_plus"> Post+
+                                <input type="radio" name="pcv" id="neg_minus" value="neg_minus"> Neg-
+                                <input type="radio" name="pcv" id="n_a" value="n_a"> N/A
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div style="float:right;">
+                            <button type="submit" class="btn btn-primary">SAVE</button>
+                            <button type="button" class="btn btn-danger">CANCEL</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/bootstrap-datepicker-1.9.0/js/bootstrap-datepicker.js"></script>
+    <script>$('.datepicker').datepicker({ format: 'yyyy-mm-dd' }).datepicker("setDate", 'now');</script>
+</body>
+</html>

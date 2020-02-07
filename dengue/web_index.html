@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Admin LTE -->
+    <link rel="stylesheet" href="bootstrap/AdminLTE-3.0.2/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="bootstrap/AdminLTE-3.0.2/dist/css/AdminLTE.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/bootstrap-4.4.1/dist/css/bootstrap.min.css">
+    <!--datepicker-->
+    <link rel="stylesheet" href="bootstrap/bootstrap-datepicker-1.9.0/css/bootstrap-datepicker.css">
+    <style>
+        input[type="text"],
+        select.form-control {
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid grey;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        input[type="text"]:focus,
+        select.form-control:focus {
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+
+        .user_input {
+            position: relative;
+        }
+        .user_input .inputText{
+            width: 100%;
+            outline: none;
+            border:none;
+            border-bottom: 1px solid #777;
+            box-shadow: none !important;
+        }
+        .user_input .inputText:focus{
+            border-color: blue;
+            border-width: medium medium 2px;
+        }
+        .user_input .floating-label {
+            position: absolute;
+            pointer-events: none;
+            top: 18px;
+            left: 10px;
+            transition: 0.2s ease all;
+        }
+        .user_input input:focus ~ .floating-label,
+        .user_input input:not(:focus):valid ~ .floating-label{
+            top: 0px;
+            left: 10px;
+            font-size: 13px;
+            opacity: 1;
+        }
+        .row{
+            padding:20px;
+        }
+        .login_link{
+            left: 1100px;
+        }
+
+    </style>
+</head>
+   
+   <body class="hold-transition sidebar-mini layout-fixed">
+        <div class="wrapper">
+            <!-- Left navbar links -->
+            <!-- Navbar -->
+          <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #0094ff;">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars" style="color: #ffffff;">Dengue Surveillance System</i></a>
+              </li>
+              <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link login_link" style="color: #ffffff;">LOGIN</a>
+              </li>
+            </ul>
+
+          </nav>
+          <!-- /.navbar -->
+
+          <!-- Main Sidebar Container -->
+          <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link">
+              <img src="img/admin.png" alt=" " class="brand-image img-circle elevation-3"
+                   style="opacity: .8">
+              <span class="brand-text font-weight-light">Admin LTE</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+              <!-- Sidebar user panel (optional) -->
+              <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="image">
+                  <img src="img/admin.png" class="img-circle elevation-2" alt=" ">
+                </div>
+                <div class="info">
+                  <a href="#" class="d-block">Admin</a>
+                </div>
+              </div>
+
+              <!-- Sidebar Menu -->
+              <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <li class="nav-item">
+                    <a href="web_index.html" class="nav-link">
+                      <i class="nav-icon far fa-circle text-danger"></i>
+                      <p class="text">Home</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="chart.html" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Chart</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon far fa-circle text-info"></i>
+                      <p>Link2</p>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+          </aside>
+
+          <!-- Content Wrapper. Contains page content -->
+          <div class="content-wrapper">
+
+            <!-- Main content -->
+            <section class="content">
+              <div class="container-fluid">
+                <div class="card" style="padding: 10px; top: 10px;">
+                <div class="photo_container box" id="main">
+                    <div class="modal-header">
+                        <h5 class="box-title table_header">Dengue Surveillance System</h5>
+                    </div>
+
+
+                    <form class="form-horizontal" method="post" enctype="multipart/form-data" action="javascript:save(); ">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText datepicker" required/>
+                                        <span class="floating-label">စာရင်းရရှိသည့် ရက်စွဲ</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText datepicker" required/>
+                                        <span class="floating-label">ဆေးရုံတက်ရက်*</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText" required/>
+                                        <span class="floating-label">လူနာအမည်</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><h6>ဆေးရုံတက် Grading</h6></label>
+                                        <input type="radio" name="grading" id="df" value="df"> DF
+                                        <input type="radio" name="grading" id="dhf" value="dhf"> DHF
+                                        <input type="radio" name="grading" id="eds" value="eds"> EDS
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText" required/>
+                                        <span class="floating-label">အသက်</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText datepicker" required/>
+                                        <span class="floating-label">ဆေးရုံဆင်းရက်</span>
+                                        <input type="radio" name="sign" id="death" value="death"> Death
+                                        <input type="radio" name="sign" id="sign_and_gone" value="sign_and_gone"> Sign and gone
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><h6>ကျား/မ</h6></label>
+                                        <input type="radio" name="gender" id="male" value="male"> ကျား
+                                        <input type="radio" name="gender" id="female" value="female"> မ
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><h6>ဆေးရုံဆင်း Grading</h6></label>
+                                        <input type="radio" name="grading" id="df" value="df"> DF
+                                        <input type="radio" name="grading" id="dhf" value="dhf"> DHF
+                                        <input type="radio" name="grading" id="eds" value="eds"> EDS
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText" required/>
+                                        <span class="floating-label">မိဘအမည်</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText" required/>
+                                        <span class="floating-label">တက်သည့်ဆေးရုံ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText" required/>
+                                        <span class="floating-label">အမြဲတမ်းနေရပ်လိပ်စာအပြည့်အစုံ</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText" required/>
+                                        <span class="floating-label">မှတ်ချက်</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="user_input">
+                                        <br/>
+                                        <input type="text" class="inputText" required/>
+                                        <span class="floating-label">ဆက်သွယ်ရန်ဖုန်းနံပါတ်</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label><h6>Laboratory</h6></label>
+                                        <input type="radio" checked name="laboratory" id="laboratory_no" value="0"> No
+                                        <input type="radio" name="laboratory" data-toggle="collapse" data-target="#laboratory_collapse" id="laboratory_yes" value="1"> Yes
+                                        <div id="laboratory_collapse" class="collapse in">
+                                            <div class="form-group">
+                                                <label><h6>NS1 Ag</h6></label><br>
+                                                <input type="radio" name="ns1_ag" id="post_plus" value="post_plus"> Post+
+                                                <input type="radio" name="ns1_ag" id="neg_minus" value="neg_minus"> Neg-
+                                                <input type="radio" name="ns1_ag" id="n_a" value="n_a"> N/A
+                                            </div>
+                                            <div class="form-group">
+                                                <label><h6>IgM Ab</h6></label><br>
+                                                <input type="radio" name="igm_ab" id="post_plus" value="post_plus"> Post+
+                                                <input type="radio" name="igm_ab" id="neg_minus" value="neg_minus"> Neg-
+                                                <input type="radio" name="igm_ab" id="n_a" value="n_a"> N/A 
+                                            </div>
+                                            <div class="form-group">
+                                                <label><h6>IgG Ab</h6></label><br>
+                                                <input type="radio" name="igg_ab" id="post_plus" value="post_plus"> Post+
+                                                <input type="radio" name="igg_ab" id="neg_minus" value="neg_minus"> Neg-
+                                                <input type="radio" name="igg_ab" id="n_a" value="n_a"> N/A
+                                            </div>
+                                            <div class="form-group">
+                                                <label><h6>Platelet</h6></label><br>
+                                                <input type="radio" name="platelet" id="post_plus" value="post_plus"> Post+
+                                                <input type="radio" name="platelet" id="neg_minus" value="neg_minus"> Neg-
+                                                <input type="radio" name="platelet" id="n_a" value="n_a"> N/A
+                                            </div>
+                                            <div class="form-group">
+                                                <label><h6>PCV</h6></label><br>
+                                                <input type="radio" name="pcv" id="post_plus" value="post_plus"> Post+
+                                                <input type="radio" name="pcv" id="neg_minus" value="neg_minus"> Neg-
+                                                <input type="radio" name="pcv" id="n_a" value="n_a"> N/A
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <div style="float:right;">
+                                    <button type="submit" class="btn btn-primary">SAVE</button>
+                                    <button type="button" class="btn btn-danger">CANCEL</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+              </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+          </div>
+          <!-- /.content-wrapper -->
+          <footer class="main-footer">
+            <strong>Copyright &copy; 2014-2019.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+              <b>Anything you want</b>
+            </div>
+          </footer>
+
+          <!-- Control Sidebar -->
+          <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+          </aside>
+          <!-- /.control-sidebar -->
+        </div>
+        <!-- ./wrapper -->
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- AdminLTE App -->
+    <script src="bootstrap/AdminLTE-3.0.2/dist/js/adminlte.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/bootstrap-4.4.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    <script>$('.datepicker').datepicker({ format: 'yyyy-mm-dd' }).datepicker("setDate", 'now');</script>
+</body>
+</html>

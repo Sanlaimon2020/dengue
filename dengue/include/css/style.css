@@ -1,0 +1,41 @@
+input[type="text"],
+select.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus,
+select.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn {
+  border-radius: 0;
+}
+.navbar {
+  background-color: #0094ff;
+  color:#ffffff;
+}
+.btn_login{
+  color:#ffffff;
+}
+.login_form{
+  padding: 50px;
+}
+.login_header{
+  text-align: center;
+  padding-top: 150px;
+}
+.form_btn{
+  background-color: #0094ff;
+  border-radius: 20px;
+  color: #ffffff;
+  margin-left: 100px;
+}
+body{
+  font-size: 12px;
+}
